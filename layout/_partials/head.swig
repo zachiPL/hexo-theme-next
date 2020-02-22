@@ -149,10 +149,6 @@
     }
   };
 </script>
-
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-
 {# Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 #}
 {% if theme.canonical %}
   <link rel="canonical" href="{{ config.url }}/{{ page.canonical_path.replace('index.html', '') }}"/>

@@ -12,9 +12,6 @@
 
   <div id="posts" class="posts-expand">
     {{ post_template.render(page) }}
-<% if(page.comments && theme.comments && theme.comments.gitment){ %>
-    <div id="gitment-comments"></div>    
-<% } %>
     <div class="post-spread">
       {% if theme.jiathis %}
         {% include '_partials/share/jiathis.swig' %}
@@ -27,7 +24,6 @@
       {% endif %}
     </div>
   </div>
-
 {% endblock %}
 
 {% block sidebar %}
@@ -37,16 +33,3 @@
 {% block script_extra %}
   {% include '_scripts/pages/post-details.swig' %}
 {% endblock %}
-
-<script>
-const gitment = new Gitment({
-    id: '<%= page.title.replace(/[^\w\s]/gi, '').substring(0, 49) %>',
-    owner: 'zachiPL',
-    repo: 'zachiPL.github.io',
-    oauth: {
-        client_id: '<%= theme.comments.gitment.clientId %>',
-        client_secret: '<%= theme.comments.gitment.clientSecret %>'
-    }
-});
-gitment.render(document.getElementById('gitment-comments'));
-</script>
